@@ -46,6 +46,11 @@ namespace wago_module
             }
         }
 
+        public bool[] GetInput()
+        {
+            return input_coil_state;
+        }
+
         public bool StateDifferent()
         {
             for(int i = 0; i < output_coil_state.Length; i++)

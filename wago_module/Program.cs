@@ -14,13 +14,11 @@ namespace wago_module
             // The code provided will print ‘Hello World’ to the console.
             // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
             Console.WriteLine("Hello World!");
-            WagoRemoteIO master = new WagoRemoteIO();
-            master.StartMonitor();
-            master.SetBlinkList(new int[] { 1, 3, 5, 7, 9 });
+            Manager manager = new Manager();
+            manager.StartListen();
+
             Console.ReadKey();
-            master.SetBlinkList(new int[] { 2, 4, 6 });
-            Console.ReadKey();
-            master.StopMonitor();
+            manager.StopListen();
 
             // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
         }
